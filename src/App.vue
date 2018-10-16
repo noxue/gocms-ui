@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
+    <div class="footer">&copy;不学网(noxue.com)</div>
   </div>
 </template>
 
@@ -40,8 +41,8 @@ body{
 .footer{
   text-align: center;
   font-size: 12px;
-  color:#666;
-  margin-top:20px;
+  color:#aaa;
+  margin-top:10px;
 }
 a{
   text-decoration: none;

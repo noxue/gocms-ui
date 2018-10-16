@@ -11,7 +11,6 @@
         <router-link :to="'/article/' + article.Type + '/' + article.Name + '/' + v.Name">{{ v.Title }}</router-link>
       </li>
     </ul>
-    <div class="footer">&copy;不学网(noxue.com)</div>
   </div>
 </template>
 

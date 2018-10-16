@@ -16,7 +16,6 @@
         </ul>
       </div>
     </div>
-    <div class="footer">&copy;不学网(noxue.com)</div>
   </div>
 </template>
 
