@@ -40,10 +40,10 @@ export default {
   },
   methods: {
     fetchTypes () {
-      getTypes().then(res => {
+      getTypes({'order': 'asc', 'sortby': 'sort'}).then(res => {
         this.types = res.types
         for (var i in this.types) {
-          this.fetchArticles({'type': this.types[i].Name})
+          this.fetchArticles({'type': this.types[i].Name, 'order': 'asc', 'sortby': 'sort'})
         }
       })
     },
