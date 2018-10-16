@@ -4,7 +4,7 @@
       <router-link to="/articles"><img at="不学网" src="/static/logo.png" /></router-link>
     </div>
     <div class="description">
-      不学网为各个领域的程序员提供教程。主要是图形用户界面，数据库和编程语言。该网站的使命是为现代技术提供称职/快速且易于理解的教程。您可以关注<b>微信公众号(不学网)</b>。获取不学网上所有教程的列表。<br/>
+      不学网为各个领域的程序员提供教程。主要是图形用户界面，数据库和编程语言。该网站的使命是为现代技术提供称职/快速且易于理解的教程。您可以关注&nbsp;<b>微信公众号(不学网)</b>，获取不学网上所有教程的列表。或加入&nbsp;<a href="https://jq.qq.com/?_wv=1027&k=5F229cU" target="_blank">QQ群：934723920</a>&nbsp;和网友们一起交流。<br/><br/>
       <b><a href="http://bbs.noxue.com" target="_blank">不学网论坛</a></b>
     </div>
     <div class="type-list">

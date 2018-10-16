@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <div class="footer">&copy;不学网(noxue.com) <a href="https://jq.qq.com/?_wv=1027&k=5F229cU" target="_blank">QQ交流群：934723920</a><br/></div>
+    <div class="footer">&copy;不学网(noxue.com)&nbsp;&nbsp;联系站长QQ:30670835</div>
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
 <style>
 @import 'reset-css/reset.css';
 body{
-  background: #424040;
+  background: #333;
   text-align: center;
   color: #444;
 }
@@ -32,7 +32,7 @@ body{
   text-align: left;
   background: #fff;
   color: #000;
-  padding:20px;
+  padding:40px 30px;
 }
 .logo img{
   height:50px;
