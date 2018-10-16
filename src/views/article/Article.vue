@@ -4,9 +4,8 @@
       <router-link to="/articles"><img src="/static/logo.png" /></router-link>
     </div>
     <h3 class="title">{{article.Title}}</h3>
-    <div class="content">
-    {{article.Content}}
-    </div>
+    <div class="content markdown-body" v-html="article.Content"/>
+    <p v-if="article.Chapters && article.Chapters.length>0" class="chapter-menu">目录</p>
     <ul v-if="article.Chapters && article.Chapters.length>0" class="chapter-list">
       <li v-for="(v,k) in article.Chapters" :key="k">
         <router-link :to="'/article/' + article.Type + '/' + article.Name + '/' + v.Name">{{ v.Title }}</router-link>
@@ -18,6 +17,25 @@
 
 <script>
 import { getArticle, getChapter } from '@/api/article'
+var marked = require('marked')
+var hljs = require('highlight.js')
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  highlight: function (code, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      return hljs.highlight(lang, code, true).value
+    } else {
+      return hljs.highlightAuto(code).value
+    }
+  }
+})
 
 export default {
   name: 'articleDetail',
@@ -35,10 +53,12 @@ export default {
       this.articleName = this.$route.params.article
       this.chapterName = this.$route.params.chapter
       this.fetchArticle()
+    },
+    'article': function (n, o) {
+      this.article.Content = marked(n.Content, { sanitize: true })
     }
   },
   created () {
-
   },
   mounted () {
     this.typeName = this.$route.params.type
@@ -63,7 +83,10 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+@import 'github-markdown-css/github-markdown';
+@import 'highlight.js/styles/github.css';
+
 .description{
   margin-top:20px;
 }
@@ -106,9 +129,15 @@ h3.title{
   font-size:22px;
 }
 
+.chapter-menu {
+  margin-top:40px;
+  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
 .chapter-list{
   list-style:none;
-  margin-top:40px;
 }
 
 .chapter-list a {

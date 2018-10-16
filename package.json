@@ -16,6 +16,9 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.8",
+    "github-markdown-css": "^2.10.0",
+    "highlight.js": "^9.13.0",
+    "marked": "^0.5.1",
     "reset-css": "^4.0.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
