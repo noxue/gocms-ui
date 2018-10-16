@@ -17,17 +17,20 @@ export default new Router({
     {
       path: '/articles',
       name: 'articles',
-      component: ArticleIndex
+      component: ArticleIndex,
+      meta: { title: '不学网' }
     },
     {
       path: '/article/:type/:article',
       name: 'article',
-      component: Article
+      component: Article,
+      meta: { title: '文章' }
     },
     {
       path: '/article/:type/:article/:chapter',
       name: 'chapter',
-      component: Article
+      component: Article,
+      meta: { title: '章节' }
     }
   ]
 })

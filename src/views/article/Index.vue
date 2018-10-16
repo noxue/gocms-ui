@@ -23,6 +23,7 @@
 <script>
 import { getTypes } from '@/api/article-type'
 import { getArticles } from '@/api/article'
+import { seoInfo } from '@/utils/title'
 
 export default {
   name: 'articles',
@@ -32,8 +33,17 @@ export default {
       articles: {}
     }
   },
+  watch: {
+    'types': function (n, o) {
+      var desc = '不学网为各个领域的程序员提供教程。主要是图形用户界面，数据库和编程语言。该网站的使命是为现代技术提供称职/快速且易于理解的教程。'
+      var keywords = []
+      for (var i in this.types) {
+        keywords.push(this.types[i].Title)
+      }
+      seoInfo('不学网 - 为各界程序员提供技术教程', keywords.join(','), desc)
+    }
+  },
   created () {
-
   },
   mounted () {
     this.fetchTypes()

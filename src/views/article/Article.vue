@@ -16,6 +16,8 @@
 
 <script>
 import { getArticle, getChapter } from '@/api/article'
+import { seoInfo } from '@/utils/title'
+
 var marked = require('marked')
 var hljs = require('highlight.js')
 marked.setOptions({
@@ -55,6 +57,7 @@ export default {
     },
     'article': function (n, o) {
       this.article.Content = marked(n.Content, { sanitize: true })
+      seoInfo(this.article.Title, this.article.Tags.join(','), this.article.Content)
     }
   },
   created () {
