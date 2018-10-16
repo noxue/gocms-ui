@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <div class="footer">&copy;不学网(noxue.com)</div>
+    <div class="footer">&copy;不学网(noxue.com) <a href="https://jq.qq.com/?_wv=1027&k=5F229cU" target="_blank">QQ交流群：934723920</a><br/></div>
   </div>
 </template>
 
@@ -44,6 +44,11 @@ body{
   color:#aaa;
   margin-top:10px;
 }
+
+.footer a{
+  color:#ddd;
+}
+
 a{
   text-decoration: none;
 }

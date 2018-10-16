@@ -4,7 +4,8 @@
       <router-link to="/articles"><img at="不学网" src="/static/logo.png" /></router-link>
     </div>
     <div class="description">
-      不学网为各个领域的程序员提供教程。主要是图形用户界面，数据库和编程语言。该网站的使命是为现代技术提供称职/快速且易于理解的教程。 您可以关注微信公众号(不学网)关注作者。获取不学网上所有教程的列表。
+      不学网为各个领域的程序员提供教程。主要是图形用户界面，数据库和编程语言。该网站的使命是为现代技术提供称职/快速且易于理解的教程。您可以关注<b>微信公众号(不学网)</b>。获取不学网上所有教程的列表。<br/>
+      <b><a href="http://bbs.noxue.com" target="_blank">不学网论坛</a></b>
     </div>
     <div class="type-list">
       <div v-if="articles[v.Name]" v-for="(v,k) in types" :key="k"  class="type-item">
@@ -61,6 +62,13 @@ export default {
 <style scoped>
 .description{
   margin-top:20px;
+}
+
+.description a{
+  color:#0099f7;
+}
+.description b{
+  font-weight: 700;
 }
 
 .article-list{
