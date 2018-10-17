@@ -85,6 +85,7 @@ export default {
   list-style: none;
   display: flex;
   flex-flow: row;
+  flex-wrap: wrap;
 }
 
 .article-list > li {
