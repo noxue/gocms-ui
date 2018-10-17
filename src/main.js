@@ -3,8 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ba from 'vue-ba'
 
 Vue.config.productionTip = false
+
+Vue.use(ba, 'b0a11768a569b1e7c8df43aa9161947e')
 
 /* eslint-disable no-new */
 new Vue({
